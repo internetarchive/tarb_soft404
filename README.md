@@ -45,7 +45,7 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
  `python Content_extractor_error.py <inputfile.csv> <outputfilename.csv> <index of URL> <max_workers> `
 5. **run.py**:This script takes in a list of websites in form a csv and returns the structure-based features in form of a csv with columns Url, size_total, Load_time, image_count, image_unreachable,average_word_length, ratio,  image_size_total, matched_keywords,number_of_words,Script_size, Css_size and labels. 
 `python run.py <inputfile.csv> <outputfilename.csv> <index of URL>`
-6.**dfbatch.py**: This script takes in csv and return both structural and content based analysis.
+6. **dfbatch.py**: This script takes in csv and return both structural and content based analysis.
  `python run.py <inputfile.csv> <outputfilename.csv> <index of URL> <max_workers> `
-7.**soft404_duplicate.py**: This is a classifier based upon if content of websites returned is in original URL and last part of URL changed to some random 25 letters.
+7. **soft404_duplicate.py**: This is a classifier based upon if content of websites returned is in original URL and last part of URL changed to some random 25 letters.
 
