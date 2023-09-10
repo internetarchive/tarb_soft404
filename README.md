@@ -27,12 +27,11 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
   
 
 ## Prerequisites
-
-  
-
 - Python 3.x
 - pip
 - further library requirements are present in requirement.txt file.
+- pip install -r requirements.txt
+
 
 
 ### Dataset
@@ -74,3 +73,9 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
  `python run.py <inputfile.csv> <outputfilename.csv> <index of URL> <max_workers> `
 10. **get_links.py**: This is used to extract all non wikipedia and no archive links from a webpage (wikipedia webpage)
  `from get_links import get_links` `get_links(URL)` 
+
+### Inference
+1. **bert.py**: This python script takes in a URL scrapes it in terms of content passes through BERT  and returns predictions `python bert.py '<URL>'`
+2. **bert_df.py**: This is a python script file which takes in a csv dataframe of extracted data and returns BERT predictions csv.
+3. **Catboost_prediction.py**: This python script takes in a URL scrapes it in terms of structure passes it through catboost  and return predictions `python Catboost_prediction.py '<URL>'`
+4. **catboost_df.py**: This is a python script which takes in a csv dataframe of extracted data and returns catboost predictions csv.
