@@ -49,3 +49,10 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
  `python run.py <inputfile.csv> <outputfilename.csv> <index of URL> <max_workers> `
 7. **soft404_duplicate.py**: This is a classifier based upon if content of websites returned is in original URL and last part of URL changed to some random 25 letters.
 
+### Train
+1. **BERT_model**: This is a Jupyter Notebook file to preprocess the extracted data, train and save the trained BERT model, further we can also test the model if we have more labeled extracted data.
+2. **Catboost_train**: This is a Jupyter Notebook file to preprocess the extracted data, train a catboost model and save it. Further we can also test the model if we have more labeled extracted data.
+3. **run.py**: It is same file as BERT_model but in form of a python script to train on non GUI machine, GPU servers.
+4. **test.py**: This file load the fine-tuned BERT model and makes prediction and according to the label and prediction generates the score like accuracy precision and recall along with confusion matrix.
+
+
