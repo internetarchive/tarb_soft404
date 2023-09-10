@@ -58,14 +58,19 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
    `python test.py`
 
 ### WebUI
-1. **Single_page_analysis.py**: This is a webUI script built on streamlit , given one link this will return predictions whether its 200 okay or if 404 error.`streamlit run Single_page_analysis.py`
-2. **Onepage_wikipedia.py**: This is a webUI script built on streamlit , given one Wikipedia link this will return predictions whether its 200 okay or if 404 error on all non-wiki and non-archive links present on the page. `streamlit run Onepage_wikipedia.py``
-3. **analysis_csv.py**: This is a webUI script built on streamlit , given one csv files of links it will make prediction on all links present and which return HTTPS status code of 200 okayy else it stores non 200 okay URLS in one csv and all other websites which give errors while scraping in other. `streamlit run analysis_csv.py`
-4. **bert.py**: This is a helper file given a link it returns BERT predictions `python bert.py '<URL>'`
+1. **Single_page_analysis.py**: This is a webUI script built on streamlit , given one link this will return predictions whether its 200 okay or if 404 error.
+ `streamlit run Single_page_analysis.py`
+2. **Onepage_wikipedia.py**: This is a webUI script built on streamlit , given one Wikipedia link this will return predictions whether its 200 okay or if 404 error on all non-wiki and non-archive links present on the page.
+  `streamlit run Onepage_wikipedia.py``
+3. **analysis_csv.py**: This is a webUI script built on streamlit , given one csv files of links it will make prediction on all links present and which return HTTPS status code of 200 okayy else it stores non 200 okay URLS in one csv and all other websites which give errors while scraping in other.
+  `streamlit run analysis_csv.py`
+4. **bert.py**: This is a helper file given a link it returns BERT predictions
+   `python bert.py '<URL>'`
 5. **bert_df.py**: This is a helper file which takes in a csv dataframe of extracted data and returns BERT predictions csv.
-6. **Catboost_prediction.py**:This is a helper file given a link it returns catboost predictions `python Catboost_prediction.py '<URL>'`
-7. **catboost_df.py**:This is a helper file which takes in a csv dataframe of extracted data and returns catboost predictions csv.
-8.  **dfbatch.py**: This script takes in csv and return both structural and content based analysis.
+6. **Catboost_prediction.py**:This is a helper file given a link it returns catboost predictions
+  `python Catboost_prediction.py '<URL>'`
+8. **catboost_df.py**:This is a helper file which takes in a csv dataframe of extracted data and returns catboost predictions csv.
+9.  **dfbatch.py**: This script takes in csv and return both structural and content based analysis.
  `python run.py <inputfile.csv> <outputfilename.csv> <index of URL> <max_workers> `
- 9. **get_links.py**: This is used to extract all non wikipedia and no archive links from a webpage (wikipedia webpage)
+10. **get_links.py**: This is used to extract all non wikipedia and no archive links from a webpage (wikipedia webpage)
  `from get_links import get_links` `get_links(URL)` 
