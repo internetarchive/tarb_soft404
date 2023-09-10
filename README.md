@@ -33,3 +33,19 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
 - Python 3.x
 - pip
 - further library requirements are present in requirement.txt file.
+
+
+### Dataset
+1. **chunks.py**: This script divides large csv into small csv based upon chunk_size.
+2. **duplicates.py**: This script takes a csv keeps one website per domain and returns the a processed csv.
+3. **Content_extractor_new.py**: This script takes in a list of websites in form a csv and returns the content based features in form of a csv with columns as URL, Title, Article, Text, meaningful image names and label. 
+ `python Content_extractor_new.py <inputfile.csv> <outputfilename.csv> <index of URL> <max_workers> `
+ max_workers is used to multithread the process but keeping it very high also stalled the process due to limitations of download speed RAM and computing power , its suggested to play around its value and find a sweet spot. For kaggle its around 256-320.
+4. **Content_extractor_error.py**: This script is used to generate artificial 404 by adding random string in place of string after last '/' in websites that respond with False in is_dead function. This takes in a list of websites in form a csv and returns the content-based features in form of a csv with columns as URL, Title, Article, Text, meaningful image names and label. 
+ `python Content_extractor_error.py <inputfile.csv> <outputfilename.csv> <index of URL> <max_workers> `
+ 5. **run.py**:This script takes in a list of websites in form a csv and returns the structure-based features in form of a csv with columns Url, size_total, Load_time, image_count, image_unreachable,average_word_length, ratio,  image_size_total, matched_keywords,number_of_words,Script_size, Css_size and labels. 
+`python run.py <inputfile.csv> <outputfilename.csv> <index of URL>`
+ 6.**dfbatch.py**: This script takes in csv and return both structural and content based analysis.
+ `python run.py <inputfile.csv> <outputfilename.csv> <index of URL> <max_workers> `
+7.**soft404_duplicate.py**: This is a classifier based upon if content of websites returned is in original URL and last part of URL changed to some random 25 letters.
+
