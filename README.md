@@ -53,6 +53,8 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
 1. **BERT_model**: This is a Jupyter Notebook file to preprocess the extracted data, train and save the trained BERT model, further we can also test the model if we have more labeled extracted data.
 2. **Catboost_train**: This is a Jupyter Notebook file to preprocess the extracted data, train a catboost model and save it. Further we can also test the model if we have more labeled extracted data.
 3. **run.py**: It is same file as BERT_model but in form of a python script to train on non GUI machine, GPU servers.
+   `python run.py`
 4. **test.py**: This file load the fine-tuned BERT model and makes prediction and according to the label and prediction generates the score like accuracy precision and recall along with confusion matrix.
+   `python test.py`
 
 
