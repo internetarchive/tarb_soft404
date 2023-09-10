@@ -220,5 +220,6 @@ for i in range(cm.shape[0]):
                  color="white" if cm[i, j] > thresh else "black")
 
 plt.tight_layout()
+plt.savefig('confusion_matrix.png')
 plt.show()
 
