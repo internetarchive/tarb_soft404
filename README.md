@@ -14,10 +14,11 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
 -  `Train/`: In this directory, you'll find files for training two types of models:
 
 	-   A tree-based Catboost model that focuses on analyzing the structure of webpages.
-	-   A BERT model that has been fine-tuned for content-based analysis of webpages. 
+	-   A BERT model that has been fine-tuned for content-based analysis of webpages.
+ 	-   Trained models are available at [models](https://iitk-my.sharepoint.com/:f:/g/personal/pranjalb21_iitk_ac_in/EnlZgXy26hxCl8nZMSWDuVoBud1FE8_RdbJBsWW89C_aXQ?e=pRdcvX)
+ 	   		
 	- Additionally, there are files for experimenting with hyperparameters of the Catboost model to optimize its performance. You'll also find functions for testing the trained models.
- 	- Trained models are available at [models](https://iitk-my.sharepoint.com/:f:/g/personal/pranjalb21_iitk_ac_in/EnlZgXy26hxCl8nZMSWDuVoBud1FE8_RdbJBsWW89C_aXQ?e=pRdcvX)
- 
+ 	
 
 -  `WebUI/`: This directory contains web user interfaces (WebUI) built using Streamlit. These interfaces allow users to input data and receive predictions regarding whether a webpage is a soft 404 error or not. There are three WebUI applications:
 
