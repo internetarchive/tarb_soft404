@@ -4,6 +4,24 @@
 ## Overview
 This repository is a comprehensive toolset for soft 404 detection, encompassing data scraping, model training, web user interfaces, and inference capabilities. It utilizes tree-based models and Transformers like BERT to analyze webpage structure and content, making it a versatile solution for identifying soft 404 errors on websites.
 
+## Usage
+
+Clone the repo and Navigate to WebUI folder 
+
+```sh
+git clone https://github.com/internetarchive/tarb_soft404.git
+cd WebUI
+```
+To create Docker Image  and run it
+
+```sh
+docker build -t soft-404 .
+docker run soft-404
+```
+Running Web UI
+```sh
+streamlit run WebUI.py
+```
 
 ## Directory Structure
 
