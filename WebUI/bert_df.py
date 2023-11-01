@@ -5,12 +5,15 @@ from tqdm import tqdm
 from transformers import BertTokenizer,BertForSequenceClassification
 from torch.utils.data import TensorDataset, DataLoader, SequentialSampler
 
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# device
+if (device) =='cpu':
+    model=torch.load("bert_model1",map_location=torch.device('cpu'))
+else:
+    model = torch.load("bert_model1")
 
-model = torch.load("bert_model1")
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=False)
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-print(device)
 
 #nltk.download('wordnet')#download it once should comment it or subsequent usage 
 with open('output1.csv', "r", encoding="cp1252", errors="replace") as f:

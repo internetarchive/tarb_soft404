@@ -12,6 +12,9 @@ Clone the repo and Navigate to WebUI folder
 git clone https://github.com/internetarchive/tarb_soft404.git
 cd WebUI
 ```
+Download models from [here](https://archive.org/download/tarb-gsoc-2023-soft-404/TARB_GSoC23_Soft404analysis/Models/)
+And place it in WebUI folder
+
 To create Docker Image  and run it
 
 ```sh
@@ -33,7 +36,7 @@ streamlit run WebUI.py
 
 	-   A tree-based Catboost model that focuses on analyzing the structure of webpages.
 	-   A BERT model that has been fine-tuned for content-based analysis of webpages.
- 	-   Trained models are available at [models](https://iitk-my.sharepoint.com/:f:/g/personal/pranjalb21_iitk_ac_in/EnlZgXy26hxCl8nZMSWDuVoBud1FE8_RdbJBsWW89C_aXQ?e=pRdcvX)
+ 	-   Trained models are available at [models](https://archive.org/download/tarb-gsoc-2023-soft-404/TARB_GSoC23_Soft404analysis/Models/)
  	   		
 	- Additionally, there are files for experimenting with hyperparameters of the Catboost model to optimize its performance. You'll also find functions for testing the trained models.
  	

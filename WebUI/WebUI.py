@@ -10,19 +10,6 @@ from urllib.parse import urlparse, urljoin
 from get_links import get_links
 
 
-import os
-
-# Get the current directory
-current_directory = os.getcwd()
-
-# List all files in the current directory
-files = [f for f in os.listdir(current_directory) if os.path.isfile(f)]
-
-# Print the list of files
-for file in files:
-    print(file)
-
-
 def run_catboost(url):
     cmd_catboost = ["python", "catboost_prediction.py",  '"' + url + '"']
     process_catboost = subprocess.run(cmd_catboost, capture_output=True, text=True)

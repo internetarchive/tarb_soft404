@@ -16,13 +16,15 @@ from nltk.corpus import wordnet
 from transformers import BertTokenizer, BertForSequenceClassification
 from goose3 import Goose
 
-model = torch.load("bert_model1")
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# device
+if (device) =='cpu':
+    model=torch.load("bert_model1",map_location=torch.device('cpu'))
+else:
+    model = torch.load("bert_model1")
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=False)
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device
-
-#nltk.download('wordnet')
+# nltk.download('wordnet')
 #uncomment the above if u havent download it even once
 
 def is_meaningful(name):
