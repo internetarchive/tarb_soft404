@@ -158,7 +158,7 @@ def main():
     if details is not None:
         
         prediction = make_prediction(details)
-        print("Prediction:")
+        #print("Prediction:")
         if (prediction==1):
             print("404-error")
         elif(prediction==0):

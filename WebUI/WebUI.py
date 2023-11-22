@@ -43,6 +43,7 @@ if selection == "Wikipedia Page Analyser":
                 future_bert = executor.submit(run_bert, link)
                 output1, error1 = future_catboost.result()
                 output2, error2 = future_bert.result()
+                print(error1,error2)
             st.write(link)
             st.write("CatBoost Output:", output1)
             st.write("BERT Output:", output2)
@@ -70,17 +71,17 @@ elif selection == "Bulk Analyser":
     def ext(df):
         temp_csv = "temp_df.csv"
         df.to_csv(temp_csv, index=False)
-        cmd_ext = ["python", "dfbatch.py",temp_csv,"output1.csv","error_404.csv","error.csv","0" ]
+        cmd_ext = ["python3", "dfbatch.py",temp_csv,"output1.csv","error_404.csv","error.csv","0" ]
         process_ext = subprocess.run(cmd_ext, capture_output=True, text=True)
         os.remove(temp_csv)
         return process_ext.stdout.strip(), process_ext.stderr.strip()
 
     def run_catboost():
-        cmd_catboost = ["python", "catboost_df.py"]
+        cmd_catboost = ["python3", "catboost_df.py"]
         process_catboost = subprocess.run(cmd_catboost, capture_output=True, text=True)
         return 
     def run_bert():
-        cmd_bert = ["python", "bert_df.py"]
+        cmd_bert = ["python3", "bert_df.py"]
         process_bert = subprocess.run(cmd_bert, capture_output=True, text=True)
         return 
 
