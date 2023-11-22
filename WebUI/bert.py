@@ -18,7 +18,7 @@ from goose3 import Goose
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # device
-if (device) =='cpu':
+if str(device) =='cpu':
     model=torch.load("bert_model1",map_location=torch.device('cpu'))
 else:
     model = torch.load("bert_model1")

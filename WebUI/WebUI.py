@@ -11,12 +11,12 @@ from get_links import get_links
 
 
 def run_catboost(url):
-    cmd_catboost = ["python", "catboost_prediction.py",  '"' + url + '"']
+    cmd_catboost = ["python3", "Catboost_prediction.py",  '"' + url + '"']
     process_catboost = subprocess.run(cmd_catboost, capture_output=True, text=True)
     return process_catboost.stdout.strip(), process_catboost.stderr.strip()
 
 def run_bert(url):
-    cmd_bert = ["python", "bert.py", '"' + url + '"']
+    cmd_bert = ["python3", "bert.py", '"' + url + '"']
     process_bert = subprocess.run(cmd_bert, capture_output=True, text=True)
     return process_bert.stdout.strip(), process_bert.stderr.strip()
 
