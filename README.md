@@ -6,15 +6,16 @@ This repository is a comprehensive toolset for soft 404 detection, encompassing 
 
 ## Usage
 
-Clone the repo and Navigate to WebUI folder 
+Clone the repository
 
 ```sh
 git clone https://github.com/internetarchive/tarb_soft404.git
-cd WebUI
 ```
-Download models from [here](https://archive.org/download/tarb-gsoc-2023-soft-404/TARB_GSoC23_Soft404analysis/Models/)
 
-And place it in WebUI folder
+Run the setup file  based on machine configuration i.e. Cpu or Gpu
+```sh
+python3 setup-gpu.py 
+```
 
 To create Docker Image  and run it
 
