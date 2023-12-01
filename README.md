@@ -17,7 +17,7 @@ Run the setup file  based on machine configuration i.e. Cpu or Gpu
 python3 setup-gpu.py 
 ```
 
-To create Docker Image  and run it
+<!-- To create Docker Image  and run it
 
 ```sh
 docker build -t soft-404 .
@@ -26,7 +26,7 @@ docker run soft-404
 Running Web UI
 ```sh
 streamlit run WebUI.py
-```
+``` -->
 
 ## Directory Structure
 
