@@ -20,6 +20,15 @@ print(torch.backends.cudnn.enabled)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
+script_dir = os.path.dirname(os.path.realpath(__file__))
+relative_path = '../Models/catboost_model.bin'
+model_path = os.path.normpath(os.path.join(script_dir, relative_path))
+
+
+clf = CatBoostClassifier()
+clf.load_model(model_path)
+
+
 def make_predictions_catboost_csv(INPUTFILE):
 
     df=pd.read_csv(INPUTFILE, encoding="cp1252")
@@ -30,11 +39,6 @@ def make_predictions_catboost_csv(INPUTFILE):
     features.remove('Url')
 
     X=df[features]
-
-
-    clf = CatBoostClassifier()
-    clf.load_model('catboost_model.bin')
-
     predictions=clf.predict(X)
     print(predictions)
 

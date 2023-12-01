@@ -27,9 +27,13 @@ features.remove('Url')
 
 X=df[features]
 
+script_dir = os.path.dirname(os.path.realpath(__file__))
+relative_path = '../Models/catboost_model.bin'
+model_path = os.path.normpath(os.path.join(script_dir, relative_path))
+
 
 clf = CatBoostClassifier()
-clf.load_model('catboost_model.bin')
+clf.load_model(model_path)
 
 predictions=clf.predict(X)
 print(predictions)

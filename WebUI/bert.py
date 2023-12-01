@@ -16,12 +16,18 @@ from nltk.corpus import wordnet
 from transformers import BertTokenizer, BertForSequenceClassification
 from goose3 import Goose
 
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+relative_path = '../Models/bert_model1'
+model_path = os.path.normpath(os.path.join(script_dir, relative_path))
+
+
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # device
 if str(device) =='cpu':
-    model=torch.load("bert_model1",map_location=torch.device('cpu'))
+    model=torch.load(model_path,map_location=torch.device('cpu'))
 else:
-    model = torch.load("bert_model1")
+    model = torch.load(model_path)
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=False)
 
 # nltk.download('wordnet')
@@ -54,7 +60,6 @@ def get_website_details(url):
         soup = BeautifulSoup(content, "html.parser")
         paragraphs = soup.find_all("p")
         
-  
         g = Goose()
         article = g.extract(raw_html=content) 
                
@@ -108,7 +113,7 @@ def get_website_details(url):
             "Image_Name":meaningful_image_names,
             "response_status_code": response.status_code
         }
-
+        #print(details)
         return details
 
     except Exception as e:

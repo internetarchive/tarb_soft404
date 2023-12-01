@@ -1,16 +1,23 @@
 import numpy as np
 import pandas as pd
 import torch
+import os
 from tqdm import tqdm
 from transformers import BertTokenizer,BertForSequenceClassification
 from torch.utils.data import TensorDataset, DataLoader, SequentialSampler
 
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+relative_path = '../Models/bert_model1'
+model_path = os.path.normpath(os.path.join(script_dir, relative_path))
+
+
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # device
 if str(device) =='cpu':
-    model=torch.load("bert_model1",map_location=torch.device('cpu'))
+    model=torch.load(model_path,map_location=torch.device('cpu'))
 else:
-    model = torch.load("bert_model1")
+    model = torch.load(model_path)
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=False)
 

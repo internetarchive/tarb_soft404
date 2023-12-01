@@ -2,6 +2,7 @@ import requests
 import re
 import io
 import time
+import os
 import sys
 from PIL import Image
 from bs4 import BeautifulSoup
@@ -10,9 +11,13 @@ from requests.exceptions import ConnectionError
 from urllib3.exceptions import NewConnectionError
 from catboost import CatBoostClassifier
 
+script_dir = os.path.dirname(os.path.realpath(__file__))
+relative_path = '../Models/catboost_model.bin'
+model_path = os.path.normpath(os.path.join(script_dir, relative_path))
+
 
 clf = CatBoostClassifier()
-clf.load_model('catboost_model.bin')
+clf.load_model(model_path)
 
 
 def get_file_size(url, timeout=30):
@@ -143,7 +148,7 @@ def make_prediction(details):
         details["matched_keywords"], details["number_of_words"], details["Script_size"],
         details["Css_size"]
     ]
-    print(details["response_status_code"])
+    #print(details["response_status_code"])
     prediction = clf.predict([features])
 
     return prediction

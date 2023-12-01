@@ -15,12 +15,24 @@ from urllib3.exceptions import NewConnectionError
 from nltk.corpus import wordnet
 from transformers import BertTokenizer, BertForSequenceClassification
 from goose3 import Goose
+import nltk 
 
-model = torch.load("bert_model1")
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=False)
+script_dir = os.path.dirname(os.path.realpath(__file__))
+relative_path = '../Models/bert_model1'
+model_path = os.path.normpath(os.path.join(script_dir, relative_path))
+
+
+
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device
+# device
+if str(device) =='cpu':
+    model=torch.load(model_path,map_location=torch.device('cpu'))
+else:
+    model = torch.load(model_path)
+
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', do_lower_case=False)
+
 
 #nltk.download('wordnet')
 #uncomment the above if u havent download it even once
