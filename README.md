@@ -1,5 +1,6 @@
 # tarb_gsoc23_soft404
   
+# Work in progress --- part by part 
 
 ## Overview
 This repository is a comprehensive toolset for soft 404 detection, encompassing data scraping, model training, web user interfaces, and inference capabilities. It utilizes tree-based models and Transformers like BERT to analyze webpage structure and content, making it a versatile solution for identifying soft 404 errors on websites.
